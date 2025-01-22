@@ -18,7 +18,7 @@ initialValue – The initial state value (can be a number, string, array, object
  syntax:
 useEffect(()=>{
     setTimeout(()=>{
-        setCount(count-=>count+1)
+        setCount(count=>count+1)
     },2000)
 },[])
 
@@ -26,6 +26,9 @@ useEffect(()=>{
 
  when we use an empty array it will execute the callback function  only for once.otherwise it will continuesly execute the callback function.
  
+# useRef
 
+it allow us to create mutable variables,which will not re-render the component.
 
+it is used for accessing DOM element.
 

@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import React, { useEffect ,useState} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 
 //USESTATE
@@ -17,6 +17,8 @@ import "./App.css";
 //     </>
 //   );
 // }
+
+
 // function App() {
 //  const [count,setCount] =useState(0);
 
@@ -38,20 +40,53 @@ import "./App.css";
 //  )
 // }
 
-function App(){
-  const[count,setCount] = useState(0);
-  
-  useEffect(()=>{
-    setTimeout(()=>{
-    setCount(count=>count+1)
-  },2000)
-  },[])
-  return(
-    <>
- <h1>I've rendered {count} times</h1>
-    </>
-  )
+// function App(){
+//   const[count,setCount] = useState(0);
 
+//   useEffect(()=>{
+//     setTimeout(()=>{
+//     setCount(count=>count+1)
+//   },2000)
+//   },[])
+//   return(
+//     <>
+//  <h1>I've rendered {count} times</h1>
+//     </>
+//   )
+
+// }
+
+//useRef
+
+function App() {
+  const [value, setValue] = useState(0);
+  const count = useRef(0);
+
+  useEffect(() => {
+    count.current = count.current + 1;
+  });
+
+  return (
+    <>
+      <button
+        onClick={() => {
+          setValue((prev) => prev - 1);
+        }}
+      >
+        -1
+      </button>
+      <h1>{value}</h1>
+      <button
+        onClick={() => {
+          setValue((prev) => prev + 1);
+        }}
+      >
+        +1
+      </button>
+
+      <h1>Render Count : {count.current}</h1>
+    </>
+  );
 }
 
 export default App;
