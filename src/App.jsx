@@ -20,7 +20,9 @@ function App() {
  const [count,setCount] =useState(0);
 
  const incrementCount = () => {
- setCount(count+4)
+ setCount(count+1)
+
+ // TO ADD 4 TO THE COUNT USING PREVIOUS VALUE
 // setCount(prev => prev+1)
 // setCount(prev => prev+1)
 // setCount(prev => prev+1)

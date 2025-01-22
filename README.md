@@ -1,8 +1,11 @@
-# React + Vite
+# useState
+The useState hook is used to add state to functional components. It allows you to store and update values within a component, triggering re-renders when the state changes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+const [state, setState] = useState(initialValue);
 
-Currently, two official plugins are available:
+state – The current state value.
+setState – A function to update the state.
+initialValue – The initial state value (can be a number, string, array, object, etc.).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# useEffect
+
