@@ -1,4 +1,5 @@
-import { useState } from "react";
+// import { useState } from "react";
+import React, { useEffect ,useState} from "react";
 import "./App.css";
 
 //USESTATE
@@ -16,25 +17,41 @@ import "./App.css";
 //     </>
 //   );
 // }
-function App() {
- const [count,setCount] =useState(0);
+// function App() {
+//  const [count,setCount] =useState(0);
 
- const incrementCount = () => {
- setCount(count+1)
+//  const incrementCount = () => {
+//  setCount(count+1)
 
- // TO ADD 4 TO THE COUNT USING PREVIOUS VALUE
+//  TO ADD 4 TO THE COUNT USING PREVIOUS VALUE
 // setCount(prev => prev+1)
 // setCount(prev => prev+1)
 // setCount(prev => prev+1)
 // setCount(prev => prev+1)
- }
- return(
-<>
-  <h1>Count : {count}</h1>
-  <button onClick={incrementCount}>Increment</button>
-</>
+//  }
+//  return(
+// <>
+//   <h1>Count : {count}</h1>
+//   <button onClick={incrementCount}>Increment</button>
+// </>
 
- )
+//  )
+// }
+
+function App(){
+  const[count,setCount] = useState(0);
+  
+  useEffect(()=>{
+    setTimeout(()=>{
+    setCount(count=>count+1)
+  },2000)
+  },[])
+  return(
+    <>
+ <h1>I've rendered {count} times</h1>
+    </>
+  )
+
 }
 
 export default App;

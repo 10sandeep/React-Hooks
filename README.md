@@ -8,4 +8,24 @@ setState – A function to update the state.
 initialValue – The initial state value (can be a number, string, array, object, etc.).
 
 # useEffect
+ it allows you to perform side effects in your components.
+
+ examples:
+ 1.fetching data from API
+ 2.directly updating the DOM
+ 3.Timers like setTimeOut and setInterval
+
+ syntax:
+useEffect(()=>{
+    setTimeout(()=>{
+        setCount(count-=>count+1)
+    },2000)
+},[])
+
+[]-it is the empty array of dependecies
+
+ when we use an empty array it will execute the callback function  only for once.otherwise it will continuesly execute the callback function.
+ 
+
+
 
